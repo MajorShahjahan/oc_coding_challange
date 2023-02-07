@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/components/avatar/avatar_image.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/components/icons/gradient_icon.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/components/text/custom_text.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/elements/button/icon_button/icon_button.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/elements/tiles/character_tile/character_tile.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/elements/tiles/media_tile_m/media_tile_m.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/style/colors.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/style/gradients.dart';
-import 'package:kiddinx_app_streaming/presentation/shared/style/spacing.dart';
+import 'package:oc_coding_challange/presentation/shared/components/avatar/avatar_image.dart';
+import 'package:oc_coding_challange/presentation/shared/components/icons/gadient_icon.dart';
+import 'package:oc_coding_challange/presentation/shared/elements/button/icon_button/icon_button.dart';
+import 'package:oc_coding_challange/presentation/shared/style/colors.dart';
+import 'package:oc_coding_challange/presentation/shared/style/gradients.dart';
+import 'package:oc_coding_challange/presentation/shared/style/spacing.dart';
 
 class HorizontalListLayout extends StatelessWidget {
   const HorizontalListLayout({
@@ -34,7 +31,7 @@ class HorizontalListLayout extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(
+              padding:  const EdgeInsets.only(
                 left: CustomSpaces.space2x,
               ),
               child: HorizontalListLayoutHeader(
@@ -54,7 +51,7 @@ class HorizontalListLayout extends StatelessWidget {
   }
 
   Widget _generateHorizontalList() {
-    final List<Widget> items = leading != null ? [leading!, ...tiles] : tiles;
+    final List items = leading != null ? [leading!, ...tiles] : tiles;
     return SizedBox(
       height: _height,
       child: ListView.builder(
@@ -103,7 +100,7 @@ class HorizontalListLayoutHeader extends StatelessWidget {
 
   Widget get _leading => (args.icon != null)
       ? CustomIconButton(
-          buttonSize: _buttonSize,
+          size: _buttonSize,
           icon: GradientIcon(
             gradient: Gradients.blueGradient,
             icon: args.icon!,
@@ -116,6 +113,8 @@ class HorizontalListLayoutHeader extends StatelessWidget {
           borderGradient: args.light ? null : Gradients.blueGradient,
         );
 }
+
+
 
 class HorizontalListLayoutHeaderArguments {
   HorizontalListLayoutHeaderArguments({
